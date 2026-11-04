@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BloodConnect | Save Lives</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <h2 class="logo">🩸 BloodConnect</h2>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#donors">Find Donors</a></li>
+                <li><a href="#register">Become a Donor</a></li>
+            </ul>
+            <a href="#register" class="nav-btn">Donate Now</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="tag">❤️ Every Drop Counts</span>
+            <h1>Donate Blood,<br><span>Save Lives.</span></h1>
+            <p>
+                Your small contribution can make a big difference.
+                Join our community and help people in need of blood.
+            </p>
+            <a href="#register" class="primary-btn">Become a Donor</a>
+            <a href="#donors" class="secondary-btn">Find Blood</a>
+        </div>
+
+        <div class="hero-image">
+            <div class="blood-icon">🩸</div>
+            <h2>Be Someone's Hero</h2>
+            <p>Give blood. Give hope. Give life.</p>
+        </div>
+    </section>
+
+    <!-- Statistics -->
+    <section class="stats" id="about">
+        <div class="stat-card">
+            <h2 id="donorCount">0</h2>
+            <p>Registered Donors</p>
+        </div>
+        <div class="stat-card">
+            <h2>8</h2>
+            <p>Blood Groups</p>
+        </div>
+        <div class="stat-card">
+            <h2>24/7</h2>
+            <p>Community Support</p>
+        </div>
+    </section>
+
+    <!-- Find Donors -->
+    <section class="donors-section" id="donors">
+        <div class="section-heading">
+            <span>FIND BLOOD DONORS</span>
+            <h2>Find a Blood Donor</h2>
+            <p>Search for registered donors in your city.</p>
+        </div>
+
+        <div class="search-box">
+            <select id="bloodFilter">
+                <option value="">All Blood Groups</option>
+                <option>A+</option>
+                <option>A-</option>
+                <option>B+</option>
+                <option>B-</option>
+                <option>AB+</option>
+                <option>AB-</option>
+                <option>O+</option>
+                <option>O-</option>
+            </select>
+
+            <input type="text" id="cityFilter"
+                   placeholder="Enter city name">
+
+            <button onclick="searchDonors()">Search Donors</button>
+        </div>
+
+        <div class="donor-grid" id="donorList">
+        </div>
+        <p id="noResults" class="no-results" hidden>
+            No matching donors found.
+        </p>
+    </section>
+
+    <!-- Registration -->
+    <section class="register-section" id="register">
+        <div class="register-info">
+            <span>JOIN OUR COMMUNITY</span>
+            <h2>Become a Life Saver Today!</h2>
+            <p>
+                Register yourself as a blood donor and help someone
+                get a second chance at life.
+            </p>
+            <h3>❤️ Your Blood Can Save Someone's Life.</h3>
+        </div>
+
+        <form id="donorForm" class="donor-form">
+            <h2>Donor Registration</h2>
+
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="03XXXXXXXXX"
+                   pattern="03[0-9]{9}" required>
+
+            <label for="blood">Blood Group</label>
+            <select id="blood" required>
+                <option value="">Select Blood Group</option>
+                <option>A+</option>
+                <option>A-</option>
+                <option>B+</option>
+                <option>B-</option>
+                <option>AB+</option>
+                <option>AB-</option>
+                <option>O+</option>
+                <option>O-</option>
+            </select>
+
+            <label for="city">City</label>
+            <input type="text" id="city" placeholder="Enter your city" required>
+
+            <button type="submit">Register as Donor</button>
+            <p id="message" role="status"></p>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h2>🩸 BloodConnect</h2>
+        <p>Connecting donors with people in need.</p>
+        <p>© 2026 BloodConnect. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
